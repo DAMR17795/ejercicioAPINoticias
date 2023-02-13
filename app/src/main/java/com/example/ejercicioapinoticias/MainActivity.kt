@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
             .build()
 
         val newsApi = api.create(NewsApi::class.java)
-        newsApi.getTopHeadlines("us", "0449fc9bb3fc43caa89f1b1064210789", 20)
+        newsApi.getTopHeadlines("us", "0449fc9bb3fc43caa89f1b1064210789", 34)
             .enqueue(object : Callback<NewsResponse> {
                 override fun onResponse(
                     call: Call<NewsResponse>,
