@@ -19,7 +19,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var adapter: NewsAdapter
     private lateinit var textView: TextView
     private lateinit var lista: MutableList<News>
-    private lateinit var miAdapter:NewsAdapter
     private lateinit var searchView: androidx.appcompat.widget.SearchView
 
 
@@ -33,7 +32,6 @@ class MainActivity : AppCompatActivity() {
         searchView = findViewById(R.id.searchview)
         newsRecyclerView.layoutManager = LinearLayoutManager(this)
         lista = mutableListOf()
-        miAdapter = NewsAdapter()
 
         textView = findViewById(R.id.tvNo)
 
@@ -100,13 +98,6 @@ class MainActivity : AppCompatActivity() {
                 return true
             }
         })
-    }
-
-    private fun buscarNoticia(texto: String?) {
-        val resultados = lista.filter {
-            it.title.contains(texto!!, true)
-        }
-        miAdapter.setList((resultados as MutableList<News>))
     }
 
 }
