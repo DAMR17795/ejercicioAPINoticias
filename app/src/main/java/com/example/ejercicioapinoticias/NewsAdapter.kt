@@ -7,7 +7,7 @@ import com.bumptech.glide.Glide
 
 class NewsAdapter: RecyclerView.Adapter<NewsViewHolder>() {
 
-    private val news = mutableListOf<News>()
+    private var news = mutableListOf<News>()
 
     fun updateNews(newNews: List<News>) {
         news.clear()
@@ -33,6 +33,11 @@ class NewsAdapter: RecyclerView.Adapter<NewsViewHolder>() {
         Glide.with(holder.image.context)
             .load(currentNews.urlToImage)
             .into(holder.image)
+    }
+
+    fun setList(lista2:MutableList<News>){
+        this.news = lista2
+        notifyDataSetChanged()
     }
 
 }

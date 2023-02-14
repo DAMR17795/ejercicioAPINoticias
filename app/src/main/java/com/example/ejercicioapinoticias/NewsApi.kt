@@ -13,4 +13,12 @@ interface NewsApi {
         @Query("apiKey") apiKey: String,
         @Query("pageSize") pageSize: Int
     ): Call<NewsResponse>
+
+    @GET("v2/top-headlines")
+    fun getTopHeadlinesNombre(
+        @Query("country") country: String,
+        @Query("apiKey") apiKey: String,
+        @Query("pageSize") pageSize: Int,
+        @Query("q") q:String
+    ): Call<NewsResponse>
 }
